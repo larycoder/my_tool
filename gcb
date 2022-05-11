@@ -1,0 +1,20 @@
+#!/bin/zsh
+# Git commit by base
+source ~/.zshrc
+TOP=$(git rev-parse --show-toplevel);
+PREFIX=$(git rev-parse --show-prefix);
+
+# get first dirname
+if [[ $PREFIX == "" ]];
+then
+    BASE=$(basename $TOP);
+else
+    BASE=$(basename $(cut -d '/' -f1 <<< $PREFIX));
+fi;
+
+if [[ $? == 0 ]];
+then
+    gc "$BASE: $1";
+else
+    echo "Fail to process!" >&2;
+fi;
