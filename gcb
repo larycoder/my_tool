@@ -14,7 +14,7 @@ fi;
 
 if [[ $? == 0 ]];
 then
-    gc "$BASE: $1";
+    git commit -m "$BASE: $1";
 else
     echo "Fail to process!" >&2;
 fi;
