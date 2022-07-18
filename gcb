@@ -1,6 +1,5 @@
-#!/bin/zsh
+#!/bin/bash
 # Git commit by base
-source ~/.zshrc
 TOP=$(git rev-parse --show-toplevel);
 PREFIX=$(git rev-parse --show-prefix);
 
